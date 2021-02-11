@@ -31,10 +31,11 @@ println("Optimal weight for σₒ=$σₒ, σᵦ=$σᵦ is W=$W")
 Tₐ = Tᵦ + W*(Tₒ - Tᵦ)
 
 ##
-plot(x, Tₜ, label="True", color = :yellow)
+p = plot(x, Tₜ, label="True", color = :cyan, xaxis="Time", yaxis="u")
 scatter!(x, Tₒ, label="Obs", msw = 0, mc = :blue, ms=2)
 scatter!(x, Tₐ, label="Analysis", msw = 0, mc = :green, ms=4)
 scatter!(x, Tᵦ, label="Model", msw = 0, mc = :red, ms=2)
+display(p)
 
 println("MSE Model: ", sum((Tₜ - Tᵦ).^2)/tsteps)
 println("MSE Analysis: ", sum((Tₜ - Tₐ).^2)/tsteps)

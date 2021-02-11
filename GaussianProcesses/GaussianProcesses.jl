@@ -46,27 +46,3 @@ plot(a, b, layout=l)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### 
-## Squared exponential kernel
-function sek(x, y, i, j, σ, σₙ, l)
-    # σ is the signal variance
-    # σₙ Noise covariance (matrix)
-    # l lengthscale
-    σ^2*e^((-(x-y)^2)/(2*l^2)) + σₙ[i,j]
-end
-
